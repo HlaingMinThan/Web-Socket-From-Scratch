@@ -10,9 +10,86 @@
       integrity="sha384-toS6mmwu70G0fw54EGlWWeA4z3dyJ+dlXBtSURSKN4vyRFOcxd3Bzjj/AoOwY+Rg"
       crossorigin="anonymous"
     ></script>
+    <style>
+      h2 {
+        font-size: 18px;
+        padding: 10px 20px;
+        color: #2b90d9;
+        text-align: center;
+      }
+
+      #app {
+        border: 1px solid #2b90d9;
+        max-width: 600px;
+        margin: 30px auto;
+        box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
+        border-radius: 2px;
+      }
+
+      #chat-window {
+        height: 400px;
+        overflow: auto;
+        background: #f9f9f9;
+      }
+
+      #output p {
+        padding: 14px 0px;
+        margin: 0 20px;
+        border-bottom: 1px solid #e9e9e9;
+        color: #555;
+      }
+
+      #feedback p {
+        color: #aaa;
+        padding: 14px 0px;
+        margin: 0 20px;
+      }
+
+      #output strong {
+        color: #2b90d9;
+      }
+
+      label {
+        box-sizing: border-box;
+        display: block;
+        padding: 10px 20px;
+      }
+
+      input {
+        padding: 10px 20px;
+        box-sizing: border-box;
+        background: #eee;
+        border: 0;
+        display: block;
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        font-family: Nunito;
+        font-size: 16px;
+      }
+
+      button {
+        background: #2b90d9;
+        color: #fff;
+        font-size: 18px;
+        border: 0;
+        padding: 12px 0;
+        width: 100%;
+        border-radius: 0 0 2px 2px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div id="app">
+      <h2>Creative coder chat app</h2>
+      <div id="chat-window">
+        <div id="output"></div>
+        <div id="feedback"></div>
+      </div>
+      <input type="text" placeholder="Name" id="name" />
+      <input type="text" placeholder="Message" id="message" />
+      <button id="send">send</button>
+    </div>
 
     <script>
       const socket = io("http://localhost:4000");
