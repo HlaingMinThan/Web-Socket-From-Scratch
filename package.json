@@ -4,6 +4,7 @@
   "description": "Web Socket Course For Beginner",
   "main": "index.js",
   "scripts": {
+    "dev":"nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -93,6 +93,25 @@
 
     <script>
       const socket = io("http://localhost:4000");
+      let output = document.getElementById("output");
+      let message = document.getElementById("message");
+      let name = document.getElementById("name");
+      let send = document.getElementById("send");
+
+      send.addEventListener("click", () => {
+        let data = {
+          name: name.value,
+          message: message.value,
+        };
+        socket.emit("chat", data);
+      });
+
+      //listen events
+      socket.on("chat", (data) => {
+        output.innerHTML += `<p><strong>${data.name}</strong> : ${data.message}</p>`;
+        name.value = "";
+        message.value = "";
+      });
     </script>
   </body>
 </html>
